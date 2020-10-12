@@ -1,0 +1,50 @@
+﻿@model IEnumerable<_0702.Models.Trainee>
+
+@{
+  ViewBag.Title = "Index";
+}
+
+<h2>Trainee</h2>
+
+<p>
+  @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>
+      Full Name
+    </th>
+    <th>
+      Phone Number
+    </th>
+    <th>
+      Working Place
+    </th>
+    <th></th>
+  </tr>
+
+  @foreach (var trainee in Model)
+  {
+    <tr>
+      <td>
+        @trainee.Id
+      </td>
+      <td>
+        @trainee.FullName
+      </td>
+      <td>
+        @trainee.PhoneNumber
+      </td>
+      <td>
+        @trainee.WorkingPlace
+      </td>
+      <td>
+        @Html.ActionLink("Edit", "Edit", new { id = trainee.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = trainee.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = trainee.Id })
+      </td>
+    </tr>
+  }
+
+</table>
